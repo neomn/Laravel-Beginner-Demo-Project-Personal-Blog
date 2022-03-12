@@ -128,5 +128,16 @@
                 </div>
             </div>
         </div>
+
+        <ul>
+            @if( $article->modelKeys() != 0)
+                @foreach($article as $articles)
+                    <li> {{$articles->title}} </li>
+                @endforeach
+            @else
+                <h1> no article found </h1>
+            @endif
+        </ul>
+
     </body>
 </html>
