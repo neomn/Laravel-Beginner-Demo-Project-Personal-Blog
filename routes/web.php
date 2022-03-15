@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (Article $article) {
-
     $article = Article::all();
-
     return view('welcome' , compact('article'));
 });
 
@@ -30,7 +28,9 @@ Route::get('about', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $article = Article::all();
+    $articleCount = $article->count();
+    return view('dashboard', compact('articleCount'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
