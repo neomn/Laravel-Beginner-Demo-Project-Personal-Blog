@@ -21,7 +21,8 @@ Route::get('/', function (Article $article) {
 
 Route::get('articles', function () {
     return view('articles');
-})->name('articles');
+})->name('articles')
+->middleware('auth');
 
 Route::get('about', function () {
     return view('about');
