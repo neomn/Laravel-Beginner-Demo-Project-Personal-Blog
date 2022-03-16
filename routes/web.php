@@ -19,10 +19,11 @@ Route::get('/', function (Article $article) {
     return view('welcome' , compact('article'));
 });
 
-Route::get('articles', function () {
-    return view('articles');
-})->name('articles')
-->middleware('auth');
+Route::resource('articles', \App\Http\Controllers\ArticleController::class)
+    ->names([
+        'index'=>'articles',
+    ])
+    ->middleware('auth');
 
 Route::get('about', function () {
     return view('about');

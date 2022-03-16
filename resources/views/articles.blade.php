@@ -19,6 +19,11 @@
                 </tr>
                 </thead>
                 <tbody>
+{{--                    @foreach($article as $article)--}}
+{{--                        <tr>--}}
+{{--                            <td>{{$loop->iteration}}</td>--}}
+{{--                        </tr>--}}
+{{--                    @endforeach--}}
                 <tr>
                     <td>   1   </td>
                     <td>test title</td>
