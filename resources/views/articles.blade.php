@@ -9,7 +9,7 @@
         <h1 class="p-6">this is articles page </h1>
 
         <div class=" px-4  inline-flex  table-fixed">
-            <table class="text-center   border-separate border-2 p-4 rounded border-gray-500">
+            <table class="text-center   border-separate border-2 p-4 ml-4 rounded border-gray-500">
                 <thead class="border-b">
                 <tr>
                     <th scope="col" class="px-3 border-b">ID</th>
