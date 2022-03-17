@@ -85,6 +85,7 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Article::destroy($id);
+        return redirect()->route('articles');
     }
 }

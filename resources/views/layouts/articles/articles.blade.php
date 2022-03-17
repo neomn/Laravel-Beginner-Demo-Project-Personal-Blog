@@ -29,7 +29,9 @@
                         <td class="px-3">{{$article->content}}</td>
                         <td class="px-3">{{$article->created_at}}</td>
                         <td>
-                            <form action="post">
+                            <form action="{{route('articles.destroy',$article->id)}}" method="post">
+                                @csrf
+                                @method('delete')
                                 <button type="submit" class="px-4 mx-4 border rounded bg-red-900 "> delete</button>
                             </form>
                         </td>
