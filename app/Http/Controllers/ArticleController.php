@@ -13,7 +13,7 @@ class ArticleController extends Controller
     public function index(Article $article)
     {
         $article = Article::all();
-        return view('articles', compact('article'));
+        return view('layouts/articles/articles', compact('article'));
 
     }
 
@@ -24,7 +24,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.articles.create');
     }
 
     /**

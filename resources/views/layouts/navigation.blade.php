@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('articles')" :active="request()->routeIs('articles')" class="text-gray-300">
                         <h3>Articles Management </h3>
                     </x-nav-link>
+                    <x-nav-link :href="route('create')" :active="request()->routeIs('create')" class="text-gray-300">
+                        <h3>Create New Article </h3>
+                    </x-nav-link>
                 </div>
             </div>
 

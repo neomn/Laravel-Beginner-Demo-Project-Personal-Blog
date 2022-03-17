@@ -22,6 +22,7 @@ Route::get('/', function (Article $article) {
 Route::resource('articles', \App\Http\Controllers\ArticleController::class)
     ->names([
         'index'=>'articles',
+        'create'=>'create',
     ])
     ->middleware('auth');
 
