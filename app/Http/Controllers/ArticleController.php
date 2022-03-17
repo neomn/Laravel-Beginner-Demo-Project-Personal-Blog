@@ -31,11 +31,16 @@ class ArticleController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     *
      */
     public function store(Request $request)
     {
-        //
+        Article::create([
+            'title'=>$request->title,
+            'content'=>$request->contents,
+        ]);
+        $message = 'article created successfully';
+        return redirect()-> route('articles', compact('message'));
     }
 
     /**

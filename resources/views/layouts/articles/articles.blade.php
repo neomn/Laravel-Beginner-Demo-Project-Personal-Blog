@@ -1,12 +1,15 @@
 <x-app-layout>
+
+    @isset($message)
+        <h2>{{$message}}</h2>
+    @endisset
+
     <div class="text-gray-200">
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-200 leading-tight">
                 Articles
             </h2>
         </x-slot>
-
-        <h1 class="p-6">this is articles page </h1>
 
         <div class=" px-4  inline-flex  table-fixed">
             <table class="text-center   border-separate border-2 p-4 ml-4 rounded border-gray-500">
@@ -19,19 +22,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach($article as $article)
-                        <tr>
-                            <td class="px-3">{{$loop->iteration}}</td>
-                            <td class="px-3">{{$article->title}}</td>
-                            <td class="px-3">{{$article->content}}</td>
-                            <td class="px-3">{{$article->created_at}}</td>
-                            <td>
-                                <form action="post">
-                                    <button type="submit" class="px-4 mx-4 border rounded bg-red-900 "> delete </button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
+                @foreach($article as $article)
+                    <tr>
+                        <td class="px-3">{{$loop->iteration}}</td>
+                        <td class="px-3">{{$article->title}}</td>
+                        <td class="px-3">{{$article->content}}</td>
+                        <td class="px-3">{{$article->created_at}}</td>
+                        <td>
+                            <form action="post">
+                                <button type="submit" class="px-4 mx-4 border rounded bg-red-900 "> delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
