@@ -35,6 +35,11 @@
                                 <button type="submit" class="px-4 mx-4 border rounded bg-red-900 "> delete</button>
                             </form>
                         </td>
+                        <td>
+                            <form action="{{route('articles.edit',$article->id)}}" method="get">
+                                <button type="submit" class=" px-4 border rounded bg-amber-500 text-gray-900 "> Edit </button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
