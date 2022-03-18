@@ -19,15 +19,15 @@ Route::get('/', function (Article $article) {
     return view('welcome' , compact('article'));
 });
 
-Route::resource('articles', \App\Http\Controllers\ArticleController::class)
-    ->names([
-        'index'=>'articles',
-        'create'=>'create',
-    ])
-    ->middleware('auth');
-
-Route::resource('categories', \App\Http\Controllers\CategoryController::class);
-Route::resource('tags', \App\Http\Controllers\TagController::class);
+Route::middleware('auth')->group( function() {
+    Route::resource('articles', \App\Http\Controllers\ArticleController::class)
+        ->names([
+            'index' => 'articles',
+            'create' => 'create',
+        ]);
+    Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+    Route::resource('tags', \App\Http\Controllers\TagController::class);
+});
 
 Route::get('about', function () {
     return view('about');

@@ -1,8 +1,5 @@
 <x-app-layout>
 
-    @isset($message)
-        <h2>{{$message}}</h2>
-    @endisset
 
     <div class="text-gray-200">
         <x-slot name="header">
@@ -11,7 +8,21 @@
             </h2>
         </x-slot>
 
+
+       <h1 hidden > {{ $id = app('request')->input('id')  }}  </h1>
+        @isset($id)
+            <div class=" p-3 ml-4">
+                <form action="{{route('categories.update',$category[$id]->title)}}" method="post">
+                    @csrf
+                    @method('put')
+                    <button class="border rounded bg-lime-900 p-2 px-4 mr-4" type="submit" > Update </button>
+                    <input class="border rounded bg-gray-700 text-gray-200 w-96" name="title" type="text" value="{{$category[$id]->title}}" >
+                </form>
+            </div>
+        @endisset
+
         {{-- Create a new Category --}}
+        @if(!isset($id))
         <div class=" p-3 ml-4">
             <form action="{{route('categories.store')}}" method="post">
             @csrf
@@ -19,6 +30,7 @@
             <input class="border rounded bg-gray-700 text-gray-200 w-96" name="title" type="text" placeholder="enter category to create a new one" >
             </form>
         </div>
+        @endif
 
         {{--display all categories in a table --}}
         <div class=" px-4  inline-flex  table-fixed">
@@ -42,7 +54,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="{{route('categories.edit',$category->id)}}" method="get">
+                            <form action="{{route('categories.edit',$loop->iteration-1)}}" method="get">
                                 <button type="submit" class=" px-4 border rounded bg-amber-500 text-gray-900 "> Edit </button>
                             </form>
                         </td>

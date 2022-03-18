@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index(Category $category)
+    public function index(  Category $category )
     {
         $category = Category::all();
         return view('layouts/categories/manage', compact('category'));
@@ -26,23 +26,20 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
-        return view('layouts.articles.edit',compact('category'));
+        return redirect()->route('categories.index', compact('id'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $title)
     {
-        $category = Category::find($id);
-        $category->title = $request->title;
-        $category->content = $request->contents;
-        $category->save();
-
-        return redirect()->route('articles');
+        Category::where('title',$title)->update([
+            'title'=>$request->title,
+        ]);
+        return redirect()->route('categories.index');
     }
 
     public function destroy($id)
     {
         Category::destroy($id);
-        return redirect()->route('articles');
+        return redirect()->route('categories.index');
     }
 }
