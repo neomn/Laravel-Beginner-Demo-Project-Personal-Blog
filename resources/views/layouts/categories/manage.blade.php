@@ -13,10 +13,11 @@
 
         {{-- Create a new Category --}}
         <div class=" p-3 ml-4">
-            <form action="{{route('categories.create')}}" method="post"></form>
+            <form action="{{route('categories.store')}}" method="post">
             @csrf
             <button class="border rounded bg-lime-900 p-2 px-4 mr-4" type="submit" > Create </button>
-            <input class="border rounded bg-gray-700 text-gray-200 w-96" type="text" placeholder="enter category to create a new one" >
+            <input class="border rounded bg-gray-700 text-gray-200 w-96" name="title" type="text" placeholder="enter category to create a new one" >
+            </form>
         </div>
 
         {{--display all categories in a table --}}

@@ -14,19 +14,13 @@ class CategoryController extends Controller
 
     }
 
-    public function create()
-    {
-        return view('layouts.categories.create');
-    }
+    public function store(Request $request){
 
-
-    public function store(Request $request)
-    {
         Category::create([
-            'title'=>$request->title,
+            'title'=>$request->title ,
         ]);
-        $message = 'article created successfully';
-        return redirect()-> route('articles', compact('message'));
+        $message = 'Category created successfully';
+        return redirect()-> route('categories.index', compact('message'));
     }
 
 
