@@ -79,6 +79,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->content = $request->contents;
         $article->save();
+
         return redirect()->route('articles');
     }
 
