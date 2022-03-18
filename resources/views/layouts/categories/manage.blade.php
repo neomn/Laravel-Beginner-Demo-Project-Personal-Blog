@@ -12,19 +12,20 @@
         </x-slot>
 
         {{-- Create a new Category --}}
-        <div>
+        <div class=" p-3 ml-4">
             <form action="{{route('categories.create')}}" method="post"></form>
             @csrf
-            <button type="submit" > Create </button>
-            <input type="text" placeholder="enter category to create a new one" >
+            <button class="border rounded bg-lime-900 p-2 px-4 mr-4" type="submit" > Create </button>
+            <input class="border rounded bg-gray-700 text-gray-200 w-96" type="text" placeholder="enter category to create a new one" >
         </div>
 
+        {{--display all categories in a table --}}
         <div class=" px-4  inline-flex  table-fixed">
             <table class="text-center   border-separate border-2 p-4 ml-4 rounded border-gray-500">
                 <thead class="border-b">
                 <tr>
                     <th scope="col" class="px-3 border-b">ID</th>
-                    <th scope="col" class="px-3 border-b">Category</th>
+                    <th scope="col" class="px-3 border-b w-96">Category</th>
                 </tr>
                 </thead>
                 <tbody>
