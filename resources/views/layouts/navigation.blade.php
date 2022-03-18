@@ -21,6 +21,12 @@
                     <x-nav-link :href="route('create')" :active="request()->routeIs('create')" class="text-gray-300">
                         <h3>Create New Article </h3>
                     </x-nav-link>
+                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories')" class="text-gray-300">
+                        <h3>Manage Categories </h3>
+                    </x-nav-link>
+                    <x-nav-link :href="route('tags.index')" :active="request()->routeIs('tags')" class="text-gray-300">
+                        <h3>Manage Tags </h3>
+                    </x-nav-link>
                 </div>
             </div>
 

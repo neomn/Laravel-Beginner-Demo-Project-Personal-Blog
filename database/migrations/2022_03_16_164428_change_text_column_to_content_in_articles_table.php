@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('content_in_articles', function (Blueprint $table) {
+        Schema::table('articles', function (Blueprint $table) {
             $table->renameColumn('content','text');
         });
     }

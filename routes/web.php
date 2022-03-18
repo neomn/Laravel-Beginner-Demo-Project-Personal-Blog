@@ -26,6 +26,9 @@ Route::resource('articles', \App\Http\Controllers\ArticleController::class)
     ])
     ->middleware('auth');
 
+Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+Route::resource('tags', \App\Http\Controllers\TagController::class);
+
 Route::get('about', function () {
     return view('about');
 });
