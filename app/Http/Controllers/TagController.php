@@ -11,45 +11,34 @@ class TagController extends Controller
     {
         $tag = Tag::all();
         return view('layouts/tags/manage', compact('tag'));
-
     }
-
-    public function create()
-    {
-        return view('layouts/tags/manage');
-    }
-
 
     public function store(Request $request)
     {
-        Category::create([
-            'title'=>$request->title,
-            'content'=>$request->contents,
+        Tag::create([
+            'title'=>$request->title ,
         ]);
-        $message = 'article created successfully';
-        return redirect()-> route('articles', compact('message'));
+        $message = 'Tag created successfully';
+        return redirect()-> route('tags.index', compact('message'));
     }
 
 
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
-        return view('layouts.articles.edit',compact('category'));
+        return redirect()->route('tags.index', compact('id'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $title)
     {
-        $category = Category::find($id);
-        $category->title = $request->title;
-        $category->content = $request->contents;
-        $category->save();
-
-        return redirect()->route('articles');
+        Tag::where('title',$title)->update([
+            'title'=>$request->title,
+        ]);
+        return redirect()->route('tags.index');
     }
 
     public function destroy($id)
     {
-        Category::destroy($id);
-        return redirect()->route('articles');
+        Tag::destroy($id);
+        return redirect()->route('tags.index');
     }
 }
