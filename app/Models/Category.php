@@ -12,4 +12,8 @@ class Category extends Model
     protected $fillable = [
         'title'
     ];
+
+    public function article(){
+        return $this->belongsTo(Article::class);
+    }
 }

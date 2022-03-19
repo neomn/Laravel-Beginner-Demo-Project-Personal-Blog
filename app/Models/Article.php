@@ -14,6 +14,9 @@ class Article extends Model
       'content',
     ];
 
+    public function categories(){
+        return $this->$this->hasOne(Category::class);
+    }
     public function tags(){
         return $this->hasMany(tag::class);
     }
