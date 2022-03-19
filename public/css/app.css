@@ -619,6 +619,10 @@ select {
 .z-50 {
   z-index: 50;
 }
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -626,10 +630,6 @@ select {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -649,6 +649,12 @@ select {
 .ml-2 {
   margin-left: 0.5rem;
 }
+.ml-4 {
+  margin-left: 1rem;
+}
+.mr-4 {
+  margin-right: 1rem;
+}
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -664,9 +670,6 @@ select {
 .mr-2 {
   margin-right: 0.5rem;
 }
-.ml-4 {
-  margin-left: 1rem;
-}
 .mt-8 {
   margin-top: 2rem;
 }
@@ -678,9 +681,6 @@ select {
 }
 .mt-6 {
   margin-top: 1.5rem;
-}
-.mr-4 {
-  margin-right: 1rem;
 }
 .block {
   display: block;
@@ -748,6 +748,9 @@ select {
 .w-full {
   width: 100%;
 }
+.w-96 {
+  width: 24rem;
+}
 .w-1\/2 {
   width: 50%;
 }
@@ -765,9 +768,6 @@ select {
 }
 .w-48 {
   width: 12rem;
-}
-.w-96 {
-  width: 24rem;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -901,6 +901,10 @@ select {
 .border-transparent {
   border-color: transparent;
 }
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
@@ -909,17 +913,9 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
-.border-gray-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}
-.border-gray-900 {
-  --tw-border-opacity: 1;
-  border-color: rgb(17 24 39 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -929,13 +925,25 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
-.bg-gray-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
 .bg-lime-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(54 83 20 / var(--tw-bg-opacity));
+}
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+.bg-red-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+}
+.bg-amber-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 .bg-slate-900 {
   --tw-bg-opacity: 1;
@@ -953,44 +961,24 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
 }
-.bg-red-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
-}
 .bg-slate-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
-.bg-amber-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 211 77 / var(--tw-bg-opacity));
-}
-.bg-amber-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(146 64 14 / var(--tw-bg-opacity));
-}
-.bg-amber-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
 .fill-current {
   fill: currentColor;
+}
+.p-3 {
+  padding: 0.75rem;
 }
 .p-2 {
   padding: 0.5rem;
 }
-.p-6 {
-  padding: 1.5rem;
-}
 .p-4 {
   padding: 1rem;
 }
-.p-3 {
-  padding: 0.75rem;
+.p-6 {
+  padding: 1.5rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1008,6 +996,10 @@ select {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1023,10 +1015,6 @@ select {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 .py-6 {
   padding-top: 1.5rem;
@@ -1059,14 +1047,8 @@ select {
 .pt-6 {
   padding-top: 1.5rem;
 }
-.text-left {
-  text-align: left;
-}
 .text-center {
   text-align: center;
-}
-.align-top {
-  vertical-align: top;
 }
 .align-text-top {
   vertical-align: text-top;
