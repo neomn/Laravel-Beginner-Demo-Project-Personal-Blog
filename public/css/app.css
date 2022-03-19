@@ -688,6 +688,9 @@ select {
 .inline-block {
   display: inline-block;
 }
+.inline {
+  display: inline;
+}
 .flex {
   display: flex;
 }
@@ -817,6 +820,9 @@ select {
 }
 .list-inside {
   list-style-position: inside;
+}
+.list-none {
+  list-style-type: none;
 }
 .list-disc {
   list-style-type: disc;

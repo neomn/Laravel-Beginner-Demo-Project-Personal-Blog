@@ -46,10 +46,14 @@
                     </svg>
                 </div>
 
-                <ul class="text-gray-200">
+                <ul class="text-gray-200 list-none ">
                     @if( $article->modelKeys() != 0)
                         @foreach($article as $articles)
-                            <li> {{$articles->title}} </li>
+                            <li class=" "> {{$articles->title}} </li>
+                            <span class="ml-2"> {{$articles->content}}</span>
+                            <br>
+                            <br>
+                            <br>
                         @endforeach
                     @else
                         <h1> no article found </h1>
