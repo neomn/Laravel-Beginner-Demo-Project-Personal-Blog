@@ -19,7 +19,8 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-    </head>
+
+
     <body class="antialiased">
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
@@ -46,11 +47,21 @@
                     </svg>
                 </div>
 
+            {{-- show articles in a list   --}}
                 <ul class="text-gray-200 list-none ">
                     @if( $article->modelKeys() != 0)
                         @foreach($article as $articles)
                             <li class=" "> {{$articles->title}} </li>
                             <span class="ml-2"> {{$articles->content}}</span>
+
+                            {{-- display comments  --}}
+
+                            {{-- post a new comment --}}
+                            <form action="#">
+                                <input type="text">
+                                <button>post</button>
+                            </form>
+
                             <br>
                             <br>
                             <br>
